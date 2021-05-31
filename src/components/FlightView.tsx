@@ -69,9 +69,10 @@ const FlightView = () => {
         flight.length &&
         <>
           {
-            options && options.map((option, index) => <div key={index}>
-              <span style={{ display: 'inline-block' }} >{option}:</span>
-              <span style={{ display: 'inline-block' }}>{flight[0][index]}</span>
+            options && options.map((option, index) =>
+            <div key={index} style={{justifyContent: 'center', paddingTop: 35, marginTop:15, justifyItems: 'flex-start', alignSelf: 'flex-start', paddingRight: 10}}>
+              <span style={{padding: 10, alignSelf: 'flex-start', color: '#000', borderRadius: 10, backgroundColor: '#f47735', fontStyle: 'inherit'}}>{ option } : </span>
+              <span style={{padding: 10, alignSelf: 'flex-start', backgroundColor: 'grey', border: '1px solid', borderRadius: 10}}>{flight[0][index]}</span>
             </div>
             )
           }
