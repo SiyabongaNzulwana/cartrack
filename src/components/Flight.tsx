@@ -1,15 +1,34 @@
-import { useHistory } from 'react-router'
+import { useHistory } from "react-router"
+import airplaneImage from "../images/airplane.png"
 
 interface FlightTypes {
-  lat: number,
-  lng: number,
-  text: string,
+  lat: number
+  lng: number
+  text: string
   flightId: string
+  trueTrack: number
 }
-const placeholderImage = 'https://cdn.airport-data.com/images/aircraft/thumbnails/001/572/001572634.jpg'
-const AnyReactComponent = ({ text, flightId }: FlightTypes) => {
+
+const AnyReactComponent = ({ text, flightId, trueTrack }: FlightTypes) => {
   const history = useHistory()
-  return <div onClick={() => {history.push(`/flight/${flightId}`)}}> {text}<img width={40} height={40} src={placeholderImage} /></div>
+  return (
+    <div
+      onClick={() => {
+        history.push(`/flight/${flightId}`)
+      }}
+    >
+      {" "}
+      {text}
+      <img
+        width={40}
+        height={40}
+        src={airplaneImage}
+        style={{
+          transform: `rotate(${trueTrack}deg)`,
+        }}
+      />
+    </div>
+  )
 }
 
 export default AnyReactComponent

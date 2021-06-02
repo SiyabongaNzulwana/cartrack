@@ -1,19 +1,18 @@
-import './App.css'
-import MapView from './components/MapView'
-import { FlightsController } from './context/Context'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import FlightView from './components/FlightView'
+import "./App.css"
+import MapView from "./components/MapView"
+import { FlightsController } from "./context/Context"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import FlightView from "./components/FlightView"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={'cartrack-logo.svg'} className="App-logo" alt="logo" />
         <FlightsController>
           <BrowserRouter>
             <Switch>
-              <Route component={MapView} exact path={['/', '/home']}/>
-              <Route component={FlightView} exact path='/flight/:flightId'/>
+              <Route component={MapView} exact path={["/", "/home"]} />
+              <Route component={FlightView} exact path="/flight/:flightId" />
             </Switch>
           </BrowserRouter>
         </FlightsController>

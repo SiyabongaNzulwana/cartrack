@@ -44,6 +44,7 @@ const MapView = () => {
           lng={flight[4]}
           text={flight[1]}
           flightId={flight[0] as string}
+          trueTrack={flight[7]}
         />)}
       </GoogleMapReact>
     </div>
